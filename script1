@@ -1,0 +1,10 @@
+#!/bin/bash
+#input un nombre
+read -p "Entrer un nombre entier: " nombre
+# #mettre en place une condition qui affiche tous les nombres < à cette variable
+for (( i=$nombre; i>0 ; i--))
+# output "tous les nombres jusqu'à l'input"
+do echo "$i"
+done
+
+

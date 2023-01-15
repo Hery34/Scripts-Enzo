@@ -1,0 +1,7 @@
+#!/bin/bash
+read -p "Entrez un nombre : " nombre
+#conversion du nombre saisi en une chaîne de caractères
+longueur_chaine=$(echo $nombre | awk '{print $1}')
+#détermination de la longueur de la chaîne
+longueur=${#longueur_chaine}
+echo "le nombre de chiffres dans $nombre est $longueur"

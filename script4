@@ -1,0 +1,20 @@
+#!/bin/bash
+read -p "Entrer un nombre : " nombre
+
+# On vérifie si le nombre saisi est inférieur ou égal à 1, si c'est le cas, ça n'est pas un nombre premier, donc false sera affiché
+if [ $nombre -le 1 ]; then
+    echo false
+    exit 0
+fi
+
+# On itère de 2 jusqu'au nombre saisi (exclu)
+for (( i=2; i<$nombre; i++ )); do
+    # On vérifie que la variable $nombre est divisible par la variable $i, ce qui signifierait que le nombre n'est pas premier donc on affichera false
+    if [ $(( $nombre % $i )) -eq 0 ]; then
+        echo false
+        exit 0
+    fi
+done
+
+# à la fin de la boucle, il ne restera donc plus que la possibiité que le nombre ait rempli les conditions pour être un nombre premier
+echo true

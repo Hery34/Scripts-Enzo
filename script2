@@ -1,0 +1,13 @@
+#!/bin/bash
+#entrée de la chaîne de caractères
+read -p "Entrez votre phrase : " texte
+#convertit le texte en minuscules
+texte=${texte,,}
+voyelle=0 #initialisation du compteur de voyelles
+#boucle pour compter le nombre de voyelles
+for (( i=0; i<${#texte}; i++ )); do
+    if [[ "${texte:$i:1}" =~ [aeiou] ]]; then #condition composée avec des expressions régulières
+    ((voyelle++))
+  fi
+done
+echo "Il y a $voyelle voyelles dans cette phrase"

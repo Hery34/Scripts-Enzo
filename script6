@@ -1,0 +1,19 @@
+#!/bin/bash
+
+
+read -p "Entrez un nombre : " nombre
+
+# Initialisation de la variable somme qui stockera la somme
+somme=0
+
+# Itération de chaque chiffre du nombre saisi
+while [ $nombre -gt 0 ]; do
+    # récupération du dernier chiffre du nombre
+    dernier=$(( $nombre % 10 ))
+    # on l'additionne à la somme
+    somme=$(( $somme + $dernier ))
+    # on efface le dernier chiffre du nombre
+    nombre=$(( $nombre / 10 ))
+done
+
+echo "La somme des chiffres contenus dans le nombre $nombre est $somme"
